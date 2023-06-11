@@ -10,7 +10,6 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Why use `multitool-for-tailwindcss`](#why-use-multitool-for-tailwindcss)
-- [Examples](#examples)
 
 ## Installation
 
@@ -44,19 +43,29 @@ The directive accepts a semicolon-delimited list of utility classes and applies 
 
 ## Why use `multitool-for-tailwindcss`
 
-As Tailwind CSS projects scale, HTML can become crowded with long sequences of utility classes. `multitool-for-tailwindcss` is designed to manage this complexity, enhancing code readability and maintainability. 
-
-By employing the `multi` directive, you can group related utility classes, providing clearer insights into your code's function.
-
-## Examples
-
-Below is an example that demonstrates the flexibility of the `multi` directive, demonstrating its ability to support arbitrary values:
+In some cases, you may need to apply several utilities to a long or convoluted variant or even chain of variants, which can start tio look like this:
 
 ```html
-<div class="hover:multi-[font-bold;text-[red];[font-family:'Open_Sans',sans-serif]]">
+<div class="sm:[&>div]:hover:active:font-bold sm:[&>div]:hover:active:text-[red] sm:[&>div]:hover:active:font-family:['Open_Sans',sans-serif]">
   When hovered, this text will appear bold, red, and in Open Sans font.
 </div>
 ```
+
+This can be difficult to read and understand, especially when the number of utilities increases.
+
+By employing the `multi` directive, you can group related utility classes by variant, providing clearer insights into your code's function. Below is an example that demonstrates the flexibility of the `multi` directive, demonstrating its ability to support not only multiple utilities, but partially and fully arbitrary values:
+
+```html
+<div class="sm:[&>div]:hover:active:multi-[font-bold;text-[red];[font-family:'Open_Sans',sans-serif]]">
+  When hovered, this text will appear bold, red, and in Open Sans font.
+</div>
+```
+
+This is…
+
+✨ GREAT for consolidating utilities under long & ideally unique variants 👏🏼
+
+😬 NOT great for keeping the compile size small if you use it with commonly used variants 👀
 
 ---
 

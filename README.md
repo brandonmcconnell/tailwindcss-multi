@@ -34,7 +34,7 @@ module.exports = {
 The plugin provides a `multi` directive, allowing you to group multiple utility classes:
 
 ```html
-<div class="multi-[bg-red-500;text-white]">
+<div class="hover:multi-[bg-red-500;text-white]">
   This text is white and the background is red.
 </div>
 ```

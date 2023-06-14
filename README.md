@@ -1,9 +1,13 @@
-<h1>MultiTool for Tailwind CSS</h1>
+<h1 align="center">MultiTool for Tailwind CSS</h1>
+
+<div align="center">
 
 [![minified size](https://img.shields.io/bundlephobia/min/multitool-for-tailwindcss)](https://bundlephobia.com/package/multitool-for-tailwindcss)
 [![license](https://img.shields.io/github/license/brandonmcconnell/multitool-for-tailwindcss?label=license)](https://github.com/brandonmcconnell/multitool-for-tailwindcss/blob/main/LICENSE.txt)
 [![version](https://img.shields.io/npm/v/multitool-for-tailwindcss)](https://www.npmjs.com/package/multitool-for-tailwindcss)
 [![twitter](https://img.shields.io/twitter/follow/branmcconnell)](https://twitter.com/branmcconnell)
+
+</div>
 
 `multitool-for-tailwindcss` is a plugin for Tailwind CSS that introduces the `multi` directive, a utility that allows you to group utility classes together. This simplifies your HTML and improves readability of your Tailwind CSS code.
 

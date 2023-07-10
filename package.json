@@ -15,7 +15,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:clean": "rm -rf ./dist",
     "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
-    "build": "npm-run-all build:clean compile "
+    "build": "npm-run-all build:clean compile",
+    "watch:cjs": "tsc --watch -p tsconfig.cjs.json",
+    "watch:esm": "tsc --watch -p tsconfig.esm.json",
+    "watch:types": "tsc --watch -p tsconfig.types.json",
+    "watch": "npm-run-all --parallel watch:cjs watch:esm watch:types"
   },
   "repository": {
     "type": "git",

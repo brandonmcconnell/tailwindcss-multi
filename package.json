@@ -1,6 +1,6 @@
 {
-  "name": "multitool-for-tailwindcss",
-  "version": "0.0.8",
+  "name": "tailwindcss-multitool",
+  "version": "0.0.9",
   "description": "Grouped utility support for Tailwind CSS",
   "main": "index.js",
   "publishConfig": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandonmcconnell/multitool-for-tailwindcss.git"
+    "url": "git+https://github.com/brandonmcconnell/tailwindcss-multitool.git"
   },
   "keywords": [
     "css",
@@ -31,9 +31,9 @@
   "author": "Brandon McConnell",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brandonmcconnell/multitool-for-tailwindcss/issues"
+    "url": "https://github.com/brandonmcconnell/tailwindcss-multitool/issues"
   },
-  "homepage": "https://github.com/brandonmcconnell/multitool-for-tailwindcss#readme",
+  "homepage": "https://github.com/brandonmcconnell/tailwindcss-multitool#readme",
   "dependencies": {
     "tailwindcss": "^3.0.2"
   },

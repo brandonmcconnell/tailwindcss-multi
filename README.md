@@ -3,7 +3,7 @@
 <div align="center">
 
 [![minified size](https://img.shields.io/bundlephobia/min/multitool-for-tailwindcss)](https://bundlephobia.com/package/multitool-for-tailwindcss)
-[![license](https://img.shields.io/github/license/brandonmcconnell/multitool-for-tailwindcss?label=license)](https://github.com/brandonmcconnell/multitool-for-tailwindcss/blob/main/LICENSE.txt)
+[![license](https://img.shields.io/github/license/brandonmcconnell/multitool-for-tailwindcss?label=license)](https://github.com/brandonmcconnell/multitool-for-tailwindcss/blob/main/LICENSE)
 [![version](https://img.shields.io/npm/v/multitool-for-tailwindcss)](https://www.npmjs.com/package/multitool-for-tailwindcss)
 [![twitter](https://img.shields.io/twitter/follow/branmcconnell)](https://twitter.com/branmcconnell)
 
@@ -78,5 +78,6 @@ I hope you find `multitool-for-tailwindcss` a valuable addition to your projects
 If you liked this, you might also like my other Tailwind CSS plugins:
 * [tailwindcss-selector-patterns](https://github.com/brandonmcconnell/tailwindcss-selector-patterns): Dynamic CSS selector patterns
 * [tailwindcss-jstool](https://github.com/brandonmcconnell/tailwindcss-jstool): Effortless build-time JS script injection
-* [tailwind-lerp-colors](https://github.com/brandonmcconnell/tailwind-lerp-colors): Expand your color horizons and take the fuss out of genertaing new—or expanding existing—color palettes
 * [tailwindcss-directional-shadows](https://github.com/brandonmcconnell/tailwindcss-directional-shadows): Supercharge your shadow utilities with added directional support (includes directional `shadow-border` utilities too ✨)
+* [tailwindcss-default-shades](https://github.com/brandonmcconnell/tailwindcss-default-shades): Default shades for simpler color utility classes
+* [tailwind-lerp-colors](https://github.com/brandonmcconnell/tailwind-lerp-colors): Expand your color horizons and take the fuss out of genertaing new—or expanding existing—color palettes

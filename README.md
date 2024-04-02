@@ -2,25 +2,25 @@
 
 <div align="center">
 
-[![minified size](https://img.shields.io/bundlephobia/min/multitool-for-tailwindcss)](https://bundlephobia.com/package/multitool-for-tailwindcss)
-[![license](https://img.shields.io/github/license/brandonmcconnell/multitool-for-tailwindcss?label=license)](https://github.com/brandonmcconnell/multitool-for-tailwindcss/blob/main/LICENSE)
-[![version](https://img.shields.io/npm/v/multitool-for-tailwindcss)](https://www.npmjs.com/package/multitool-for-tailwindcss)
+[![minified size](https://img.shields.io/bundlephobia/min/tailwindcss-multitool)](https://bundlephobia.com/package/tailwindcss-multitool)
+[![license](https://img.shields.io/github/license/brandonmcconnell/tailwindcss-multitool?label=license)](https://github.com/brandonmcconnell/tailwindcss-multitool/blob/main/LICENSE)
+[![version](https://img.shields.io/npm/v/tailwindcss-multitool)](https://www.npmjs.com/package/tailwindcss-multitool)
 [![twitter](https://img.shields.io/twitter/follow/branmcconnell)](https://twitter.com/branmcconnell)
 
 </div>
 
-`multitool-for-tailwindcss` is a plugin for Tailwind CSS that introduces the `multi` directive, a utility that allows you to group utility classes together. This simplifies your HTML and improves readability of your Tailwind CSS code.
+`tailwindcss-multitool` is a plugin for Tailwind CSS that introduces the `multi` directive, a utility that allows you to group utility classes together. This simplifies your HTML and improves readability of your Tailwind CSS code.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Why use `multitool-for-tailwindcss`](#why-use-multitool-for-tailwindcss)
+- [Why use `tailwindcss-multitool`](#why-use-tailwindcss-multitool)
 
 ## Installation
 
 You can install the plugin via npm:
 
 ```bash
-npm install multitool-for-tailwindcss
+npm install tailwindcss-multitool
 ```
 
 Then, include it in your `tailwind.config.js`:
@@ -28,7 +28,7 @@ Then, include it in your `tailwind.config.js`:
 ```js
 module.exports = {
   plugins: [
-    require('multitool-for-tailwindcss'),
+    require('tailwindcss-multitool'),
   ]
 }
 ```
@@ -43,9 +43,9 @@ The plugin provides a `multi` directive, allowing you to group multiple utility 
 </div>
 ```
 
-The directive accepts a semicolon-delimited list of utility classes and applies them to the selected element. A key feature of `multitool-for-tailwindcss` is its support for arbitrary values, which are not limited to predefined classes in Tailwind CSS.
+The directive accepts a semicolon-delimited list of utility classes and applies them to the selected element. A key feature of `tailwindcss-multitool` is its support for arbitrary values, which are not limited to predefined classes in Tailwind CSS.
 
-## Why use `multitool-for-tailwindcss`
+## Why use `tailwindcss-multitool`
 
 In some cases, you may need to apply several utilities to a long or convoluted variant or even chain of variants, which can start tio look like this:
 
@@ -73,9 +73,10 @@ This is…
 
 ---
 
-I hope you find `multitool-for-tailwindcss` a valuable addition to your projects. If you have any issues or suggestions, don't hesitate to open an issue or pull request.
+I hope you find `tailwindcss-multitool` a valuable addition to your projects. If you have any issues or suggestions, don't hesitate to open an issue or pull request.
 
 If you liked this, you might also like my other Tailwind CSS plugins:
+* [tailwindcss-signals](https://github.com/brandonmcconnell/tailwindcss-signals): Declarative API for applying styles based on parent or ancestor state
 * [tailwindcss-selector-patterns](https://github.com/brandonmcconnell/tailwindcss-selector-patterns): Dynamic CSS selector patterns
 * [tailwindcss-jstool](https://github.com/brandonmcconnell/tailwindcss-jstool): Effortless build-time JS script injection
 * [tailwindcss-directional-shadows](https://github.com/brandonmcconnell/tailwindcss-directional-shadows): Supercharge your shadow utilities with added directional support (includes directional `shadow-border` utilities too ✨)

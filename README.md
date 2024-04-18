@@ -132,7 +132,7 @@ For example, consider the following markup:
 ```
 
 This generates all of these rules:
-```css
+```scss
 @media (min-width: 640px) {
   .sm\:hover\:bg-red-500:hover { /* 2 lines */ }
   .sm\:hover\:text-white:hover { /* 2 lines */ }
@@ -151,7 +151,7 @@ As a vite plugin, that markup would be split into individual utilities like this
 
 This post-split example would only generates these rules:
 
-```css
+```scss
 @media (min-width: 640px) {
   .sm\:hover\:bg-red-500:hover { /* 2 lines */ }
   .sm\:hover\:text-white:hover { /* 2 lines */ }

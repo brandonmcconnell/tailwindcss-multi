@@ -5,10 +5,12 @@ export default plugin(({ matchUtilities }) => {
             const escape = (str) => {
                 return str.replace(/_/g, '\\_').replace(/ /g, '_');
             };
-            const utilities = value.split(';').map(escape).join(' ');
-            return {
-                [`@apply ${utilities}`]: {},
-            };
+            const utilities = value.slice(1, -1).split(';').map(escape).join(' ');
+            return !utilities.trim()
+                ? {}
+                : {
+                    [`@apply ${utilities}`]: {},
+                };
         },
     });
 });

@@ -11,32 +11,19 @@
 
 `tailwindcss-multi` is a plugin for Tailwind CSS that introduces the `multi` directive, a utility that allows you to group utility classes together. This simplifies your HTML and improves readability of your Tailwind CSS code.
 
-**Table of Contents**
+### Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Why use `tailwindcss-multi`](#why-use-tailwindcss-multi)
+- [Notes on new syntax](#notes-on-new-syntax)
+    - [Example](#example)
 
 > [!IMPORTANT]
 > ### New name
 > The plugin was previously named `tailwindcss-multitool`, but has been renamed to `tailwindcss-multi` to simplify reference.
 >
 > ### Fixing breaking changes
-> There were some breaking changes introduced in Tailwind CSS v3.3.6 (see https://github.com/tailwindlabs/tailwindcss/issues/13473) that made versions of Tailwind CSS thereafter (v3.3.6+) incompatible with versions of this plugin pre-v0.2.0. Update to `@latest` to ensure compatibility. This new version is reverse-comptaibile with versions of Tailwind CSS prior to v3.3.6 as well.
->
-> This chnage requires a slight tweak to the syntax of the `multi` directive. Instead of `multi-[...]`, use `multi-['...']` (without the quotes) to pass the grouped utilities together as a string.
->
-> Passing the joind strings together as a string allows the Tailwind CSS parser (again, in Tailwind CSS v3.3.6+) to see the value as a valid CSS value and process iot as expected.
->
-> **Example:**
-> ```html
-> <!-- ❌ before -->
-> <div class="sm:hover:multi-[bg-red-500;text-white]">...</div>
-> 
-> <!-- ✅ after -->
-> <div class="sm:hover:multi-['bg-red-500;text-white']">...</div>
-> ```
-> See a similar example on Tailwind Play:
-> https://play.tailwindcss.com/Iz4SmNYnze
+> The value between the brackets in the `multi` directive must now be quoted. This is due to a breaking change introduced in Tailwind CSS v3.3.6. See the [Notes on new syntax](#notes-on-new-syntax-v020) section for more information.
 
 ## Installation
 
@@ -93,6 +80,32 @@ This is…
 ✨ GREAT for consolidating utilities under long & ideally unique variants 👏🏼
 
 😬 NOT great for keeping the compile size small if you use it with commonly used variants 👀
+
+## Notes on new syntax
+
+The release of [Tailwind CSS v3.3.6](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.6) (on Dec 4, 2023) introduced breaking changes that broke the original syntax of Multi for Tailwind CSS and several other plugins. 
+
+See [tailwindcss/#13473](https://github.com/tailwindlabs/tailwindcss/issues/13473) for the discussion that led to this new syntax.
+
+This change required a slight tweak to the syntax of the `multi` directive. Instead of `multi-[...]`, use `multi-['...']` (with a quoted value between the brackets) to pass the grouped utilities together as a string.
+
+Versions of Tailwind CSS thereafter (v3.3.6+) are now incompatible with versions of the original unquoted syntax for this plugin (pre-v0.2.0). Update to `@latest` to ensure compatibility. This new version syntax is reverse-compatible with versions of Tailwind CSS prior to v3.3.6 as well.
+
+Passing the joined strings together as a string allows the Tailwind CSS parser (again, in Tailwind CSS v3.3.6+) to see the value as a valid CSS value and process it as expected.
+
+<table><tr></tr><tr><td>
+
+#### Example
+```html
+<!-- ❌ before -->
+<div class="sm:hover:multi-[bg-red-500;text-white]">...</div>
+
+<!-- ✅ after -->
+<div class="sm:hover:multi-['bg-red-500;text-white']">...</div>
+```
+View a similar example on Tailwind Play: https://play.tailwindcss.com/Iz4SmNYnze
+
+<br></td></tr></table>
 
 ---
 

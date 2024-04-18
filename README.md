@@ -160,9 +160,11 @@ This post-split example would only generates these rules:
 
 That's down from 22 lines of output CSS to 10 lines of code, and the same minimal output that would be generated without using the `multi` directive at all.
 
-The strongest argument against using `multi` is output CSS bloat. This is I caution strongly against throughout this README and provide tips for avoiding. It's also something @adamwathan, the creator of Tailwind CSS, discussed at length in [this legendary thread](https://x.com/adamwathan/status/1461519820411789314) when he and his team explored the same idea from a different approach.
+The strongest argument against using `multi` is output CSS bloat. This is I caution strongly against throughout this README and provide tips for avoiding.
 
-Notice the nicer syntax in that linked thread. Something like that *could* be possible with a vite/postcss plugin.
+It's also something [**@adamwathan**](https://github.com/adamwathan), the creator of Tailwind CSS, discussed at length in [this legendary thread](https://x.com/adamwathan/status/1461519820411789314) when he and his team explored the same problem space from a different angle.
+
+Notice the nicer syntax in that linked thread. Something like that _**might**_ be possible with a vite/postcss plugin.
 
 This…
 ```html

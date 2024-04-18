@@ -56,31 +56,34 @@ The plugin provides a `multi` directive, allowing you to group multiple utility 
 
 ```html
 <div class="hover:multi-['bg-red-500;text-white']">
-  This text is white and the background is red.
+  When hovered, this text is white and the background is red.
 </div>
 ```
+<sup>[View this example on Tailwind Play](https://play.tailwindcss.com/CvOivRIO6w)</sup>
 
 The directive accepts a semicolon-delimited list of utility classes and applies them to the selected element. A key feature of `tailwindcss-multi` is its support for arbitrary values, which are not limited to predefined classes in Tailwind CSS.
 
 ## Why use `tailwindcss-multi`
 
-In some cases, you may need to apply several utilities to a long or convoluted variant or even chain of variants, which can start tio look like this:
+In some cases, you may need to apply several utilities to a long or convoluted variant or even chain of variants, which can start to look like this:
 
 ```html
-<div class="sm:hover:font-bold sm:hover:text-[red] sm:hover:[font-family:times]">
-  When hovered, this text will appear bold, red, and in Open Sans font.
+<div class="hover:font-bold hover:text-[red] hover:[font-family:times]">
+  When hovered, this text will appear bold, red, and in `times` font.
 </div>
 ```
+<sup>[View this example on Tailwind Play](https://play.tailwindcss.com/5FoahbwV9z)</sup>
 
 This can be difficult to read and understand, especially when the number of utilities increases.
 
 By employing the `multi` directive, you can group related utility classes by variant, providing clearer insights into your code's function. Below is an example that demonstrates the flexibility of the `multi` directive, demonstrating its ability to support not only multiple utilities, but partially and fully arbitrary values:
 
 ```html
-<div class="sm:hover:multi-['font-bold;text-[red];[font-family:times]']">
+<div class="hover:multi-['font-bold;text-[red];[font-family:times]']">
   When hovered, this text will appear bold, red, and in `times` font.
 </div>
 ```
+<sup>[View this example on Tailwind Play](https://play.tailwindcss.com/65uxKgzliP)</sup>
 
 This is…
 
@@ -92,10 +95,10 @@ This is…
 
 ```html
 <!-- ❌ before -->
-<div class="sm:hover:multi-[bg-red-500;text-white]">...</div>
+<div class="hover:multi-[bg-red-500;text-white]">...</div>
 
 <!-- ✅ after -->
-<div class="sm:hover:multi-['bg-red-500;text-white']">...</div>
+<div class="hover:multi-['bg-red-500;text-white']">...</div>
 ```
 
 <sup>[View a similar example on Tailwind Play](https://play.tailwindcss.com/Iz4SmNYnze)</sup>
@@ -175,12 +178,12 @@ Notice the nicer syntax in that linked thread. Something like that *could* be po
 
 This…
 ```html
-<div class="sm:hover:multi-['text-black;dark:text-white']">...</div>
+<div class="hover:multi-['text-black;dark:text-white']">...</div>
 ```
 
 …could become something like this:
 ```html
-<div class="sm:hover:(text-black,dark:text-white)">...</div>
+<div class="hover:(text-black,dark:text-white)">...</div>
 ```
 
 ---

@@ -11,6 +11,11 @@
 
 `tailwindcss-multi` is a plugin for Tailwind CSS that introduces the `multi` directive, a utility that allows you to group utility classes together. This simplifies your HTML and improves readability of your Tailwind CSS code.
 
+**Table of Contents**
+- [Installation](#installation)
+- [Usage](#usage)
+- [Why use `tailwindcss-multi`](#why-use-tailwindcss-multi)
+
 > [!IMPORTANT]
 > ### New name
 > The plugin was previously named `tailwindcss-multitool`, but has been renamed to `tailwindcss-multi` to simplify reference.
@@ -32,10 +37,6 @@
 > ```
 > See a similar example on Tailwind Play:
 > https://play.tailwindcss.com/Iz4SmNYnze
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Why use `tailwindcss-multi`](#why-use-tailwindcss-multi)
 
 ## Installation
 

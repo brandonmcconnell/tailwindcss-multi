@@ -134,18 +134,10 @@ For example, consider the following markup:
 This generates all of these rules:
 ```css
 @media (min-width: 640px) {
-  .sm\:hover\:bg-red-500:hover {
-    /* 2 lines */
-  }
-  .sm\:hover\:text-white:hover {
-    /* 2 lines */
-  }
-  .sm\:hover\:multi-\[\'bg-red-500\;text-white\'\]:hover {
-    /* 4 lines */
-  }
-  .sm\:hover\:multi-\[\'text-white\;bg-red-500\'\]:hover {
-    /* 4 lines */
-  }
+  .sm\:hover\:bg-red-500:hover { /* 2 lines */ }
+  .sm\:hover\:text-white:hover { /* 2 lines */ }
+  .sm\:hover\:multi-\[\'bg-red-500\;text-white\'\]:hover { /* 4 lines */ }
+  .sm\:hover\:multi-\[\'text-white\;bg-red-500\'\]:hover { /* 4 lines */ }
 }
 ```
 
@@ -161,12 +153,8 @@ This post-split example would only generates these rules:
 
 ```css
 @media (min-width: 640px) {
-  .sm\:hover\:bg-red-500:hover {
-    /* 2 lines */
-  }
-  .sm\:hover\:text-white:hover {
-    /* 2 lines */
-  }
+  .sm\:hover\:bg-red-500:hover { /* 2 lines */ }
+  .sm\:hover\:text-white:hover { /* 2 lines */ }
 }
 ```
 

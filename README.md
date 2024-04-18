@@ -16,7 +16,7 @@
 > The plugin was previously named `tailwindcss-multitool`, but has been renamed to `tailwindcss-multi` to simplify reference.
 >
 > #### Fixing breaking changes
-> There were some breaking changes introduced in Tailwind CSS v3.3.6 (see https://github.com/tailwindlabs/tailwindcss/issues/13473) that made versions of Tailwind CSS thereafter (v3.3.6+) incompatible with versions of this plugin pre-v0.2.0. Update to `0.2.1` (or `@latest`) to ensure compatibility. This new version is reverse-comptaibile with versions of Tailwind CSS prior to v3.3.6 as well.
+> There were some breaking changes introduced in Tailwind CSS v3.3.6 (see https://github.com/tailwindlabs/tailwindcss/issues/13473) that made versions of Tailwind CSS thereafter (v3.3.6+) incompatible with versions of this plugin pre-v0.2.0. Update to `@latest` to ensure compatibility. This new version is reverse-comptaibile with versions of Tailwind CSS prior to v3.3.6 as well.
 >
 > This chnage requires a slight tweak to the syntax of the `multi` directive. Instead of `multi-[...]`, use `multi-['...']` (without the quotes) to pass the grouped utilities together as a string.
 >

@@ -97,7 +97,7 @@ This is…
 <div class="sm:hover:multi-['bg-red-500;text-white']">...</div>
 ```
 
-<small>[View a similar example on Tailwind Play](https://play.tailwindcss.com/Iz4SmNYnze)</small>
+<sup>[View a similar example on Tailwind Play](https://play.tailwindcss.com/Iz4SmNYnze)</sup>
 
 The release of [Tailwind CSS v3.3.6](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.6) (on Dec 4, 2023) introduced breaking changes that broke the original syntax of Multi for Tailwind CSS and several other plugins. 
 

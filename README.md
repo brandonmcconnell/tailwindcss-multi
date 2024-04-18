@@ -99,7 +99,7 @@ Versions of Tailwind CSS thereafter (v3.3.6+) are now incompatible with versions
 
 Passing the joined strings together as a string allows the Tailwind CSS parser (again, in Tailwind CSS v3.3.6+) to see the value as a valid CSS value and process it as expected.
 
-<table><tr></tr><tr><td><br>
+<table><tr><td>
 
 **Example**
 ```html
@@ -111,7 +111,7 @@ Passing the joined strings together as a string allows the Tailwind CSS parser (
 ```
 View a similar example on Tailwind Play: https://play.tailwindcss.com/Iz4SmNYnze
 
-<br></td></tr></table>
+</td></tr></table>
 
 ---
 

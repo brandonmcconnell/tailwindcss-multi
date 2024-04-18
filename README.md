@@ -30,7 +30,7 @@
 > ✅ hover:multi-['bg-red-500;text-white']
 > ```
 >
-> See the [New syntax explanation](#notes-on-new-syntax-v020) section for more information.
+> See the [New syntax explanation](#new-syntax-explanation) section for more information.
 
 ## Installation
 

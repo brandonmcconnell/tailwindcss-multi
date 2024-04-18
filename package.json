@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-multi",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "description": "Grouped utility support for Tailwind CSS",
   "main": "./dist/cjs/index.js",
   "files": [

@@ -89,6 +89,16 @@ This is…
 
 ## New syntax explanation
 
+```html
+<!-- ❌ before -->
+<div class="sm:hover:multi-[bg-red-500;text-white]">...</div>
+
+<!-- ✅ after -->
+<div class="sm:hover:multi-['bg-red-500;text-white']">...</div>
+```
+
+<small>[View a similar example on Tailwind Play](https://play.tailwindcss.com/Iz4SmNYnze)</small>
+
 The release of [Tailwind CSS v3.3.6](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.6) (on Dec 4, 2023) introduced breaking changes that broke the original syntax of Multi for Tailwind CSS and several other plugins. 
 
 See [tailwindcss/#13473](https://github.com/tailwindlabs/tailwindcss/issues/13473) for the discussion that led to this new syntax.
@@ -98,17 +108,6 @@ This change required a slight tweak to the syntax of the `multi` directive. Inst
 Versions of Tailwind CSS thereafter (v3.3.6+) are now incompatible with versions of the original unquoted syntax for this plugin (pre-v0.2.0). Update to `@latest` to ensure compatibility. This new version syntax is reverse-compatible with versions of Tailwind CSS prior to v3.3.6 as well.
 
 Passing the joined strings together as a string allows the Tailwind CSS parser (again, in Tailwind CSS v3.3.6+) to see the value as a valid CSS value and process it as expected.
-
-**Example**
-```html
-<!-- ❌ before -->
-<div class="sm:hover:multi-[bg-red-500;text-white]">...</div>
-
-<!-- ✅ after -->
-<div class="sm:hover:multi-['bg-red-500;text-white']">...</div>
-```
-View a similar example on Tailwind Play:
-https://play.tailwindcss.com/Iz4SmNYnze
 
 ---
 

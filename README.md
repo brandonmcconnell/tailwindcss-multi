@@ -99,8 +99,6 @@ Versions of Tailwind CSS thereafter (v3.3.6+) are now incompatible with versions
 
 Passing the joined strings together as a string allows the Tailwind CSS parser (again, in Tailwind CSS v3.3.6+) to see the value as a valid CSS value and process it as expected.
 
-<table><tr><td>
-
 **Example**
 ```html
 <!-- ❌ before -->
@@ -109,9 +107,8 @@ Passing the joined strings together as a string allows the Tailwind CSS parser (
 <!-- ✅ after -->
 <div class="sm:hover:multi-['bg-red-500;text-white']">...</div>
 ```
-View a similar example on Tailwind Play: https://play.tailwindcss.com/Iz4SmNYnze
-
-</td></tr></table>
+View a similar example on Tailwind Play:
+https://play.tailwindcss.com/Iz4SmNYnze
 
 ---
 

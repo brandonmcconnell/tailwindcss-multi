@@ -104,7 +104,7 @@ This is…
 
 The release of [Tailwind CSS v3.3.6](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.6) (on Dec 4, 2023) introduced breaking changes that made the original syntax of Multi for Tailwind CSS incompatible with newer versions of Tailwind CSS.
 
-See [tailwindcss/#13473](https://github.com/tailwindlabs/tailwindcss/issues/13473) for the discussion that led to this new syntax.
+See [tailwindlabs/tailwindcss#13473](https://github.com/tailwindlabs/tailwindcss/issues/13473) for the discussion that led to this new syntax.
 
 This change required a slight tweak to the syntax of the `multi` directive. Instead of `multi-[...]`, use `multi-['...']` (with a quoted value between the brackets) to pass the grouped utilities together as a string.
 

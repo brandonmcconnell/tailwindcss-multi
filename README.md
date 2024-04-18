@@ -24,6 +24,9 @@
 >
 > ### Fixing breaking changes
 > The value between the brackets in the `multi` directive must now be quoted. This is due to a breaking change introduced in Tailwind CSS v3.3.6. See the [Notes on new syntax](#notes-on-new-syntax-v020) section for more information.
+> 
+> `hover:multi-[bg-red-500;text-white]` ❌
+> `hover:multi-['bg-red-500;text-white']` ✅
 
 ## Installation
 

@@ -20,7 +20,7 @@
 
 > [!IMPORTANT]
 > ### New name
-> The plugin was previously named `tailwindcss-multitool`, but has been renamed to `tailwindcss-multi` to simplify reference.
+> The plugin was previously named `tailwindcss-multi`, but has been renamed to `tailwindcss-multi` to simplify reference.
 >
 > ### New syntax due to breaking changes
 > The value between the brackets in the `multi` directive must now be quoted. This is due to a breaking change introduced in Tailwind CSS v3.3.6.
@@ -100,7 +100,6 @@ This is…
 <!-- ✅ after -->
 <div class="hover:multi-['bg-red-500;text-white']">...</div>
 ```
-
 <sup>[View a similar example on Tailwind Play](https://play.tailwindcss.com/BlZhVpTNyn)</sup>
 
 The release of [Tailwind CSS v3.3.6](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.6) (on Dec 4, 2023) introduced breaking changes that made the original syntax of Multi for Tailwind CSS incompatible with newer versions of Tailwind CSS.
@@ -183,7 +182,7 @@ I hope you find `tailwindcss-multi` a valuable addition to your projects. If you
 If you liked this, you might also like my other Tailwind CSS plugins:
 * [tailwindcss-signals](https://github.com/brandonmcconnell/tailwindcss-signals): Declarative API for applying styles based on parent or ancestor state
 * [tailwindcss-selector-patterns](https://github.com/brandonmcconnell/tailwindcss-selector-patterns): Dynamic CSS selector patterns
-* [tailwindcss-jstool](https://github.com/brandonmcconnell/tailwindcss-jstool): Effortless build-time JS script injection
+* [tailwindcss-js](https://github.com/brandonmcconnell/tailwindcss-js): Effortless build-time JS script injection
 * [tailwindcss-directional-shadows](https://github.com/brandonmcconnell/tailwindcss-directional-shadows): Supercharge your shadow utilities with added directional support (includes directional `shadow-border` utilities too ✨)
 * [tailwindcss-default-shades](https://github.com/brandonmcconnell/tailwindcss-default-shades): Default shades for simpler color utility classes
 * [tailwind-lerp-colors](https://github.com/brandonmcconnell/tailwind-lerp-colors): Expand your color horizons and take the fuss out of generating new—or expanding existing—color palettes

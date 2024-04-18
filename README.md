@@ -15,18 +15,21 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Why use `tailwindcss-multi`](#why-use-tailwindcss-multi)
-- [Notes on new syntax](#notes-on-new-syntax)
-    - [Example](#example)
+- [New syntax explanation](#new-syntax-explanation)
 
 > [!IMPORTANT]
 > ### New name
 > The plugin was previously named `tailwindcss-multitool`, but has been renamed to `tailwindcss-multi` to simplify reference.
 >
 > ### Fixing breaking changes
-> The value between the brackets in the `multi` directive must now be quoted. This is due to a breaking change introduced in Tailwind CSS v3.3.6. See the [Notes on new syntax](#notes-on-new-syntax-v020) section for more information.
-> 
-> `hover:multi-[bg-red-500;text-white]` ❌
-> `hover:multi-['bg-red-500;text-white']` ✅
+> The value between the brackets in the `multi` directive must now be quoted. This is due to a breaking change introduced in Tailwind CSS v3.3.6.
+>
+> ```
+> ❌ hover:multi-[bg-red-500;text-white]
+> ✅ hover:multi-['bg-red-500;text-white']
+> ```
+>
+> See the [New syntax explanation](#notes-on-new-syntax-v020) section for more information.
 
 ## Installation
 
@@ -84,7 +87,7 @@ This is…
 
 😬 NOT great for keeping the compile size small if you use it with commonly used variants 👀
 
-## Notes on new syntax
+## New syntax explanation
 
 The release of [Tailwind CSS v3.3.6](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.6) (on Dec 4, 2023) introduced breaking changes that broke the original syntax of Multi for Tailwind CSS and several other plugins. 
 
@@ -96,9 +99,9 @@ Versions of Tailwind CSS thereafter (v3.3.6+) are now incompatible with versions
 
 Passing the joined strings together as a string allows the Tailwind CSS parser (again, in Tailwind CSS v3.3.6+) to see the value as a valid CSS value and process it as expected.
 
-<table><tr></tr><tr><td>
+<table><tr></tr><tr><td><br>
 
-#### Example
+**Example**
 ```html
 <!-- ❌ before -->
 <div class="sm:hover:multi-[bg-red-500;text-white]">...</div>

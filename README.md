@@ -11,6 +11,28 @@
 
 `tailwindcss-multi` is a plugin for Tailwind CSS that introduces the `multi` directive, a utility that allows you to group utility classes together. This simplifies your HTML and improves readability of your Tailwind CSS code.
 
+> [!IMPORTANT] New name + Fixing breaking changes 
+> #### New name
+> The plugin was previously named `tailwindcss-multitool`, but has been renamed to `tailwindcss-multi` to simplify reference.
+>
+> #### Fixing breaking changes
+> There were some breaking changes introduced in Tailwind CSS v3.3.6 (see https://github.com/tailwindlabs/tailwindcss/issues/13473) that made versions of Tailwind CSS thereafter (v3.3.6+) incompatible with versions of this plugin pre-v0.2.0. Update to `0.2.1` (or `@latest`) to ensure compatibility. This new version is reverse-comptaibile with versions of Tailwind CSS prior to v3.3.6 as well.
+>
+> This chnage requires a slight tweak to the syntax of the `multi` directive. Instead of `multi-[...]`, use `multi-['...']` (without the quotes) to pass the grouped utilities together as a string.
+>
+> Passing the joind strings together as a string allows the Tailwind CSS parser (again, in Tailwind CSS v3.3.6+) to see the value as a valid CSS value and process iot as expected.
+>
+> **Example:**
+> ```html
+> <!-- ❌ before -->
+> <div class="sm:hover:multi-[bg-red-500;text-white]">...</div>
+> 
+> <!-- ✅ after -->
+> <div class="sm:hover:multi-['bg-red-500;text-white']">...</div>
+> ```
+> See a similar example on Tailwind Play:
+> https://play.tailwindcss.com/Iz4SmNYnze
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [Why use `tailwindcss-multi`](#why-use-tailwindcss-multi)

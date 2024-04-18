@@ -21,7 +21,7 @@
 > ### New name
 > The plugin was previously named `tailwindcss-multitool`, but has been renamed to `tailwindcss-multi` to simplify reference.
 >
-> ### Fixing breaking changes
+> ### New syntax due to breaking changes
 > The value between the brackets in the `multi` directive must now be quoted. This is due to a breaking change introduced in Tailwind CSS v3.3.6.
 >
 > ```

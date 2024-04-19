@@ -19,17 +19,11 @@
 - [What's next?](#whats-next)
 
 > [!IMPORTANT]
-> ### New name
-> The plugin was previously named `tailwindcss-multi`, but has been renamed to `tailwindcss-multi` to simplify reference.
->
-> ### New syntax due to breaking changes
-> The value between the brackets in the `multi` directive must now be quoted. This is due to a breaking change introduced in Tailwind CSS v3.3.6.
->
+> Update to `@latest` to ensure compatibility with newer versions of Tailwind CSS. The change also brings a slight change to the syntax, as the value between the brackets must now be quoted, due to a breaking change introduced in Tailwind CSS v3.3.6.
 > ```
 > ❌ hover:multi-[bg-red-500;text-white]
 > ✅ hover:multi-['bg-red-500;text-white']
 > ```
->
 > See the [New syntax explanation](#new-syntax-explanation) section for more information.
 
 ## Installation

@@ -19,7 +19,9 @@
 - [What's next?](#whats-next)
 
 > [!IMPORTANT]
-> Update to `@latest` to ensure compatibility with newer versions of Tailwind CSS. The change also brings a slight change to the syntax, as the value between the brackets must now be quoted, due to a breaking change introduced in Tailwind CSS v3.3.6.
+> Update to `@latest` to ensure compatibility with newer versions of Tailwind CSS.
+> 
+> **Syntax change:** The value between the brackets in the `multi` directive must now be quoted, due to a breaking change introduced in Tailwind CSS v3.3.6.
 > ```
 > ❌ hover:multi-[bg-red-500;text-white]
 > ✅ hover:multi-['bg-red-500;text-white']

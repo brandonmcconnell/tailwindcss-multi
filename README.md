@@ -25,6 +25,7 @@
 > ```
 > ❌ hover:multi-[bg-red-500;text-white]
 > ✅ hover:multi-['bg-red-500;text-white']
+>                 ^                     ^
 > ```
 > See the [New syntax explanation](#new-syntax-explanation) section for more information.
 

@@ -3,9 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.multi = void 0;
 const plugin_1 = __importDefault(require("tailwindcss/plugin"));
-exports.multi = (0, plugin_1.default)(({ matchUtilities }) => {
+module.exports = (0, plugin_1.default)(({ matchUtilities }) => {
     matchUtilities({
         multi: (value) => {
             const escape = (str) => str.replace(/_/g, '\\_').replace(/ /g, '_');
@@ -19,5 +18,3 @@ exports.multi = (0, plugin_1.default)(({ matchUtilities }) => {
         },
     });
 });
-exports.default = exports.multi;
-module.exports = exports.multi;

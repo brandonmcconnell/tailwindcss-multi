@@ -1,6 +1,6 @@
 import plugin from 'tailwindcss/plugin';
 
-const multi = plugin(({ matchUtilities }) => {
+export default plugin(({ matchUtilities }) => {
   matchUtilities({
     multi: (value) => {
       const escape = (str: string) => str.replace(/_/g, '\\_').replace(/ /g, '_');
@@ -14,5 +14,3 @@ const multi = plugin(({ matchUtilities }) => {
     },
   });
 });
-
-export default multi;

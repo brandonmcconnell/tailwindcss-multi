@@ -1,2 +1,2 @@
-import t from"tailwindcss/plugin";const i=t(({matchUtilities:t})=>{t({multi:t=>{const i=t.slice(1,-1).split(/;(?![^[]*\])/).map(t=>t.replace(/_/g,"\\_").replace(/ /g,"_")).join(" ");return i.trim()?{[`@apply ${i}`]:{}}:{}}})});export{i as default};
+import i from"tailwindcss/plugin";var t=i(({matchUtilities:i})=>{i({multi:i=>{const t=i.slice(1,-1).split(/;(?![^[]*\])/).map(i=>i.replace(/_/g,"\\_").replace(/ /g,"_")).join(" ");return t.trim()?{[`@apply ${t}`]:{}}:{}}})});export{t as default};
 //# sourceMappingURL=index.modern.js.map

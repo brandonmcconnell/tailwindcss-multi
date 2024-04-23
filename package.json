@@ -1,6 +1,7 @@
 {
   "name": "tailwindcss-multi",
   "version": "0.3.36",
+  "description": "Grouped utility support for Tailwind CSS",
   "type": "module",
   "source": "index.ts",
   "exports": {
@@ -17,7 +18,9 @@
     "build": "microbundle",
     "dev": "microbundle watch"
   },
-  "description": "Grouped utility support for Tailwind CSS",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandonmcconnell/tailwindcss-multi.git"

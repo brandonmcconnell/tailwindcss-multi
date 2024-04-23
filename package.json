@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-multi",
-  "version": "0.3.34",
+  "version": "0.3.35",
   "type": "module",
   "source": "index.ts",
   "exports": {

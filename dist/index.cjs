@@ -1,0 +1,2 @@
+function t(t){return t&&"object"==typeof t&&"default"in t?t:{default:t}}var e=/*#__PURE__*/t(require("tailwindcss/plugin")).default(function(t){(0,t.matchUtilities)({multi:function(t){var e,i=t.slice(1,-1).split(/;(?![^[]*\])/).map(function(t){return t.replace(/_/g,"\\_").replace(/ /g,"_")}).join(" ");return i.trim()?((e={})["@apply "+i]={},e):{}}})});module.exports=e;
+//# sourceMappingURL=index.cjs.map

@@ -1,26 +1,22 @@
 {
   "name": "tailwindcss-multi",
   "version": "0.3.34",
-  "description": "Grouped utility support for Tailwind CSS",
-  "main": "./dist/cjs/index.js",
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
+  "type": "module",
+  "source": "index.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
   },
-  "type": "commonjs",
-  "types": "./dist/types/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:clean": "rm -rf ./dist",
-    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
-    "build": "npm-run-all build:clean compile",
-    "watch:cjs": "tsc --watch -p tsconfig.cjs.json",
-    "watch:esm": "tsc --watch -p tsconfig.esm.json",
-    "watch:types": "tsc --watch -p tsconfig.types.json",
-    "watch": "npm-run-all --parallel watch:cjs watch:esm watch:types"
+    "build": "microbundle",
+    "dev": "microbundle watch"
   },
+  "description": "Grouped utility support for Tailwind CSS",
+  "types": "./dist/types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandonmcconnell/tailwindcss-multi.git"
@@ -54,12 +50,5 @@
     "microbundle": "^0.15.1",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.1.6"
-  },
-  "exports": {
-    "types": "./dist/types/index.d.ts",
-    "require": "./dist/cjs/index.js",
-    "import": "./dist/esm/index.js",
-    "default": "./dist/esm/index.js",
-    "node": "./dist/cjs/index.js"
   }
 }

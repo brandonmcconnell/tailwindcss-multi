@@ -4,9 +4,11 @@
   "type": "module",
   "source": "index.ts",
   "exports": {
+    "types": "./dist/types/index.d.ts",
     "require": "./dist/index.cjs",
     "default": "./dist/index.modern.js"
   },
+  "types": "dist/types/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.module.js",
   "unpkg": "./dist/index.umd.js",
@@ -16,7 +18,6 @@
     "dev": "microbundle watch"
   },
   "description": "Grouped utility support for Tailwind CSS",
-  "types": "./dist/types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandonmcconnell/tailwindcss-multi.git"

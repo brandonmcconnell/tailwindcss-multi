@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-multi",
-  "version": "0.3.39",
+  "version": "0.3.40",
   "description": "Grouped utility support for Tailwind CSS",
   "type": "module",
   "source": "index.ts",

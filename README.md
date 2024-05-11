@@ -17,7 +17,7 @@
   - [Nested variants (quoted values)](#nested-variants-quoted-values)
     - [Quotes](#quotes)
 - [Why use `tailwindcss-multi`](#why-use-tailwindcss-multi)
-- [New syntax explanation](#new-syntax-explanation)
+- [Quoted values explanation](#quoted-values-explanation)
 - [What's next?](#whats-next)
 
 > [!IMPORTANT]
@@ -31,7 +31,7 @@
 > ✅ hover:multi-['hover:bg-red-500;text-white']
 >                 ^                           ^
 > ```
-> See the [New syntax explanation](#new-syntax-explanation) section for more information.
+> See the [Quoted values explanation](#quoted-values-explanation) section for more information.
 
 ## Installation
 
@@ -60,13 +60,13 @@ The plugin provides a `multi` directive, allowing you to group multiple utility 
   When hovered, this text is white and the background is red.
 </div>
 ```
-<sup>[View this example on Tailwind Play](https://play.tailwindcss.com/CvOivRIO6w)</sup>
+<sup>[View this example on Tailwind Play](https://play.tailwindcss.com/En0nuy58kq)</sup>
 
 The directive accepts a semicolon-delimited list of utility classes and applies them to the selected element. A key feature of `tailwindcss-multi` is its support for arbitrary values, which are not limited to predefined classes in Tailwind CSS.
 
 ### Nested variants (quoted values)
 
-When a value includes a colon `:`, the value must be quoted to ensure compatibility with newer versions of Tailwind CSS. This is due to a breaking change introduced in Tailwind CSS v3.3.6 ([explanation](#whats-next)).
+When a value includes a colon `:`, the value must be quoted to ensure compatibility with newer versions of Tailwind CSS. This is due to a breaking change introduced in Tailwind CSS v3.3.6 ([explanation](#quoted-values-explanation)).
 
 > [!NOTE]  
 > One exception to this `:` rule is if the colon is used for a CSS property-value pair, like `multi-[[font-family:times]]`. In this case, quotes are not needed, as this is the expected case for using a colon `:`, which is actually what warranted the breaking change in the first place.
@@ -101,7 +101,7 @@ In some cases, you may need to apply several utilities to a long or convoluted v
   When hovered, this text will appear bold, red, and in `times` font.
 </div>
 ```
-<sup>[View this example on Tailwind Play](https://play.tailwindcss.com/5FoahbwV9z)</sup>
+<sup>[View this example on Tailwind Play](https://play.tailwindcss.com/A3EoS45R14)</sup>
 
 This can be difficult to read and understand, especially when the number of utilities increases.
 
@@ -112,7 +112,7 @@ By employing the `multi` directive, you can group related utility classes by var
   When hovered, this text will appear bold, red, and in `times` font.
 </div>
 ```
-<sup>[View this example on Tailwind Play](https://play.tailwindcss.com/65uxKgzliP)</sup>
+<sup>[View this example on Tailwind Play](https://play.tailwindcss.com/NLgm3mPUkf)</sup>
 
 This is…
 
@@ -120,16 +120,20 @@ This is…
 
 😬 NOT great for keeping the compile size small if you use it with commonly used variants 👀
 
-## New syntax explanation
+## Quoted values explanation
 
 ```html
-<!-- ❌ before -->
-<div class="hover:multi-[hover:bg-red-500;text-white]">...</div>
+⚫️ `:` not present -> quotes OPTIONAL
+✅ <div class="hover:multi-[font-bold;text-red-500]">...</div>
 
-<!-- ✅ after -->
-<div class="hover:multi-['hover:bg-red-500;text-white']">...</div>
+⚫️ `:` used in property-value pair -> quotes OPTIONAL
+✅ <div class="hover:multi-[font-bold;[color:red]]">...</div>
+
+⚫️ `:` used in nested variant -> quotes REQUIRED 🚨
+❌ <div class="hover:multi-[hover:font-bold;text-red-500]">...</div>
+✅ <div class="hover:multi-['hover:font-bold;text-red-500']">...</div>
 ```
-<sup>[View a similar example on Tailwind Play](https://play.tailwindcss.com/BlZhVpTNyn)</sup>
+<sup>[View a similar example on Tailwind Play](https://play.tailwindcss.com/yuNA3wIvuH)</sup>
 
 The release of [Tailwind CSS v3.3.6](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.6) (on Dec 4, 2023) introduced breaking changes that made the original syntax of Multi for Tailwind CSS incompatible with newer versions of Tailwind CSS.
 

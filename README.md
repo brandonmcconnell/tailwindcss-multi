@@ -21,11 +21,13 @@
 > [!IMPORTANT]
 > Update to `@latest` to ensure compatibility with newer versions of Tailwind CSS.
 > 
-> **Syntax change:** The value between the brackets in the `multi` directive must now be quoted, due to a breaking change introduced in Tailwind CSS v3.3.6.
+> **Syntax change:** If you use a value inside `multi-[...]` that includes a colon `:`, the value between the brackets must be quoted, due to a breaking change introduced in Tailwind CSS v3.3.6.
 > ```
-> ❌ hover:multi-[bg-red-500;text-white]
-> ✅ hover:multi-['bg-red-500;text-white']
->                 ^                     ^
+> ✅ hover:multi-[bg-red-500;text-white] // no `:`, so quotes are NOT NEEDED
+>
+> ❌ hover:multi-[hover:bg-red-500;text-white] // using `:`, so quotes are NEEDED 🚨
+> ✅ hover:multi-['hover:bg-red-500;text-white']
+>                 ^                           ^
 > ```
 > See the [New syntax explanation](#new-syntax-explanation) section for more information.
 
@@ -103,9 +105,9 @@ The release of [Tailwind CSS v3.3.6](https://github.com/tailwindlabs/tailwindcss
 
 See [tailwindlabs/tailwindcss#13473](https://github.com/tailwindlabs/tailwindcss/issues/13473) for the discussion that led to this new syntax.
 
-This change required a slight tweak to the syntax of the `multi` directive. Instead of `multi-[...]`, use `multi-['...']` (with a quoted value between the brackets) to pass the grouped utilities together as a string.
+This change required a slight tweak to the syntax of the `multi` directive. When using a value that includes a colon `:`, instead of using `multi-[...]`, use `multi-['...']` (with a quoted value between the brackets) to pass the grouped utilities together as a string.
 
-Versions of Tailwind CSS thereafter (v3.3.6+) are now incompatible with versions of the original unquoted syntax for this plugin (pre-v0.2.0). Update to `@latest` to ensure compatibility. This new version syntax is reverse-compatible with versions of Tailwind CSS prior to v3.3.6 as well.
+Versions of Tailwind CSS thereafter (v3.3.6+) are now incompatible with versions of the original unquoted syntax for this plugin (pre-v0.2.0) for values that contain a colon `:`. Update to `@latest` to ensure compatibility. This new version syntax is reverse-compatible with versions of Tailwind CSS prior to v3.3.6 as well.
 
 Passing the joined strings together as a string allows the Tailwind CSS parser (again, in Tailwind CSS v3.3.6+) to see the value as a valid CSS value and process it as expected.
 
@@ -114,7 +116,7 @@ Passing the joined strings together as a string allows the Tailwind CSS parser (
 I think the next natural step in the evolution of Multi for Tailwind CSS is to refactor the plugin as a vite/postcss plugin, as either a supplementary or alternate version of the current Tailwind plugin.
 
 This would allow the plugin to…
-* once again use a custom syntax, without quotes
+* once again use a custom syntax, without ever needing quotes
 * split any joined utilities into separate classes before the Tailwind CSS parser processes them
 
 If such a plugin could effectively split classes used with the `multi` directive, it would radically reduce the compile size of the CSS output, as the Tailwind CSS parser would only process the classes used within the `multi`, not the `multi` itself.

@@ -9,7 +9,7 @@ export default plugin(({ matchUtilities }) => {
       const valueIsQuoted = validQuotes.includes(value[0]);
       if (valueIsQuoted && (value.length < 3 || ends[0] !== ends[1])) {
         throw new Error(
-          `Invalid multi value: \`${value}\`. Quoted values must use matching quotes (e.g. \`multi-['...']\` or \`multi-["..."]\`).`
+          `Invalid multi value: \`${value}\`. Quoted values must use matching quotes (e.g. ['...'], ["..."], or [\`...\`]).`
         );
       }
       const escape = (str: string) => str.replace(/_/g, '\\_').replace(/ /g, '_');

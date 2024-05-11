@@ -4,7 +4,7 @@ export default plugin(({ matchUtilities }) => {
   matchUtilities({
     multi: (value) => {
       if (!value[0]) return {};
-      const validQuotes = [`'`, `"`];
+      const validQuotes = [`'`, `"`, `\``];
       const ends = [value[0], value.slice(-1)[0]];
       const valueIsQuoted = validQuotes.includes(value[0]);
       if (valueIsQuoted && (value.length < 3 || ends[0] !== ends[1])) {

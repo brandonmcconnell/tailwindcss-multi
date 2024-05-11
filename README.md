@@ -54,7 +54,7 @@ module.exports = {
 The plugin provides a `multi` directive, allowing you to group multiple utility classes:
 
 ```html
-<div class="hover:multi-['bg-red-500;text-white']">
+<div class="hover:multi-[bg-red-500;text-white]">
   When hovered, this text is white and the background is red.
 </div>
 ```
@@ -78,7 +78,7 @@ This can be difficult to read and understand, especially when the number of util
 By employing the `multi` directive, you can group related utility classes by variant, providing clearer insights into your code's function. Below is an example that demonstrates the flexibility of the `multi` directive, demonstrating its ability to support not only multiple utilities, but partially and fully arbitrary values:
 
 ```html
-<div class="hover:multi-['font-bold;text-[red];[font-family:times]']">
+<div class="hover:multi-[font-bold;text-[red];[font-family:times]]">
   When hovered, this text will appear bold, red, and in `times` font.
 </div>
 ```
@@ -94,10 +94,10 @@ This is…
 
 ```html
 <!-- ❌ before -->
-<div class="hover:multi-[bg-red-500;text-white]">...</div>
+<div class="hover:multi-[hover:bg-red-500;text-white]">...</div>
 
 <!-- ✅ after -->
-<div class="hover:multi-['bg-red-500;text-white']">...</div>
+<div class="hover:multi-['hover:bg-red-500;text-white']">...</div>
 ```
 <sup>[View a similar example on Tailwind Play](https://play.tailwindcss.com/BlZhVpTNyn)</sup>
 
@@ -106,6 +106,14 @@ The release of [Tailwind CSS v3.3.6](https://github.com/tailwindlabs/tailwindcss
 See [tailwindlabs/tailwindcss#13473](https://github.com/tailwindlabs/tailwindcss/issues/13473) for the discussion that led to this new syntax.
 
 This change required a slight tweak to the syntax of the `multi` directive. When using a value that includes a colon `:`, instead of using `multi-[...]`, use `multi-['...']` (with a quoted value between the brackets) to pass the grouped utilities together as a string.
+
+> [!NOTE]  
+> One exception to this `:` rule is if the colon is used for a CSS property-value pair, like `multi-[[font-family:times]]`. In this case, quotes are not needed, as this is the expected case for using a colon `:`, which is actually what warranted the breaking change in the first place.
+>
+> So this is valid:
+> ```html
+> <div class="hover:multi-[[font-family:times]]">...</div>
+> ```
 
 Versions of Tailwind CSS thereafter (v3.3.6+) are now incompatible with versions of the original unquoted syntax for this plugin (pre-v0.2.0) for values that contain a colon `:`. Update to `@latest` to ensure compatibility. This new version syntax is reverse-compatible with versions of Tailwind CSS prior to v3.3.6 as well.
 
@@ -125,8 +133,8 @@ For example, consider the following markup:
 
 ```html
 <div class="sm:hover:bg-red-500 sm:hover:text-white">...</div>
-<div class="sm:hover:multi-['bg-red-500;text-white']">...</div>
-<div class="sm:hover:multi-['text-white;bg-red-500']">...</div>
+<div class="sm:hover:multi-[bg-red-500;text-white]">...</div>
+<div class="sm:hover:multi-[text-white;bg-red-500]">...</div>
 ```
 
 This generates all of these rules:
@@ -134,8 +142,8 @@ This generates all of these rules:
 @media (min-width: 640px) {
   .sm\:hover\:bg-red-500:hover { /* 2 lines */ }
   .sm\:hover\:text-white:hover { /* 2 lines */ }
-  .sm\:hover\:multi-\[\'bg-red-500\;text-white\'\]:hover { /* 4 lines */ }
-  .sm\:hover\:multi-\[\'text-white\;bg-red-500\'\]:hover { /* 4 lines */ }
+  .sm\:hover\:multi-\[bg-red-500\;text-white\]:hover { /* 4 lines */ }
+  .sm\:hover\:multi-\[text-white\;bg-red-500\]:hover { /* 4 lines */ }
 }
 ```
 

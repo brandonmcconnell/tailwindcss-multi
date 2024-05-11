@@ -14,6 +14,8 @@
 ### Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
+  - [Nested variants (quoted values)](#nested-variants-quoted-values)
+    - [Quotes](#quotes)
 - [Why use `tailwindcss-multi`](#why-use-tailwindcss-multi)
 - [New syntax explanation](#new-syntax-explanation)
 - [What's next?](#whats-next)
@@ -61,6 +63,34 @@ The plugin provides a `multi` directive, allowing you to group multiple utility 
 <sup>[View this example on Tailwind Play](https://play.tailwindcss.com/CvOivRIO6w)</sup>
 
 The directive accepts a semicolon-delimited list of utility classes and applies them to the selected element. A key feature of `tailwindcss-multi` is its support for arbitrary values, which are not limited to predefined classes in Tailwind CSS.
+
+### Nested variants (quoted values)
+
+When a value includes a colon `:`, the value must be quoted to ensure compatibility with newer versions of Tailwind CSS. This is due to a breaking change introduced in Tailwind CSS v3.3.6 ([explanation](#whats-next)).
+
+> [!NOTE]  
+> One exception to this `:` rule is if the colon is used for a CSS property-value pair, like `multi-[[font-family:times]]`. In this case, quotes are not needed, as this is the expected case for using a colon `:`, which is actually what warranted the breaking change in the first place.
+>
+> So this is valid:
+> ```html
+> <div class="multi-[[font-family:times]]">...</div>
+> ```
+
+#### Quotes
+
+Valid quotes include single `'`, double `"`, and backticks `` ` ``. The choice of quote is up to you, per usage. Quotes chosen must be kept consistent within the same value.
+
+```html
+<!-- ✅ All valid -->
+<div class="multi-['hover:font-bold']">...</div>
+<div class='multi-["hover:font-bold"]'>...</div>
+<div class="multi-[`hover:font-bold`]">...</div>
+
+<!-- ❌ Invalid mix of quotes -->
+<div class="multi-['hover:font-bold"]">...</div>
+<div class="multi-["hover:font-bold`]">...</div>
+<!-- etc. -->
+```
 
 ## Why use `tailwindcss-multi`
 
@@ -112,7 +142,7 @@ This change required a slight tweak to the syntax of the `multi` directive. When
 >
 > So this is valid:
 > ```html
-> <div class="hover:multi-[[font-family:times]]">...</div>
+> <div class="multi-[[font-family:times]]">...</div>
 > ```
 
 Versions of Tailwind CSS thereafter (v3.3.6+) are now incompatible with versions of the original unquoted syntax for this plugin (pre-v0.2.0) for values that contain a colon `:`. Update to `@latest` to ensure compatibility. This new version syntax is reverse-compatible with versions of Tailwind CSS prior to v3.3.6 as well.
